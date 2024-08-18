@@ -1,0 +1,53 @@
+\usepackage{natbib}
+%\bibliographystyle{plain}
+%\citestyle{authoryear}
+%在 LaTeX 中，如果你想要使用哈佛风格（Harvard style）的文中引用，并且不希望出现数字编号，你可以使用 natbib 宏包结合 authoryear 样式。这个组合可以让你在文中引用作者和年份，并且不出现数字编号。
+\usepackage[perpage]{footmisc}%footnote re-no. every page
+%\usepackage{perpage}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%annotate eqn packages
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{tikzmark}
+\usetikzlibrary{calc}
+
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{annotate-equations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{extarrows}%长等号，且上下可添加文字
+%https://www.latexstudio.net/archives/8004.html
+%$$ A\xlongequal[sub-script]{super-script}B $$
+
+\usepackage{datetime}
+\settimeformat{ampmtime}%add am/pm. see https://texblog.org/2011/05/02/date-and-time/
+
+\usepackage{fancyhdr}
+%\pagestyle{fancy}
+\fancyfoot[C]{\thepage} % 在页脚中间添加页码
+
+\usepackage{lastpage}
+
+
+\usepackage{float}%调整图片位置的包，才能用[H]
+\usepackage{adjustbox}%供画图用
+\definecolor{mycolor}{RGB}{82, 140, 164}%调好的蓝色，做边框
+%E.G.一个画图例子
+% begin{figure}[H] % [H] forces figure to be output where it is defined in code (it suppresses floating)
+% 		\adjustbox{frame=1pt,frame,margin=0.5,color=mycolor}{\includegraphics[width=\linewidth]{pics/The Nectar login page.png}} % Figure image
+% 		\caption{\small Regenerated boundary shape and surface charge density of the charged droplets as described by Crowdy (2015), with different value of capillarity effort coefficients applied.}
+% 	\end{figure}
+
+\usepackage{extarrows}%长等号，且上下可添加文字
+%https://www.latexstudio.net/archives/8004.html
+%$$ A\xlongequal[sub-script]{super-script}B $$
+
+%链接：https://www.zhihu.com/question/617310608/answer/3166157888
+%\usepackage{amssymb}%可以打\therefore 因为所以符号的命令
+
+\usepackage{mathrsfs}%花体字母
+
+\numberwithin{equation}{section}%和上一个，让公式按 section 编号

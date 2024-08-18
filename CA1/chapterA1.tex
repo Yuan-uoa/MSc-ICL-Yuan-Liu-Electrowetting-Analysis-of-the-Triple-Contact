@@ -1,0 +1,59 @@
+\chapter{derivations}
+
+\section{from minimal energy equation to the variation}
+
+\indent These two derivations are not completed, they are recorded here briefly for further investigation.\\
+\indent Start with conducting fluid droplet $\Omega\in\mathbb{R}^2$ surrounds as usual
+\[\mathcal{E} = \gamma \mathcal{P} - \frac{\epsilon}{2} \int_{R^2 \setminus \Omega} |E|^2 \, dS\hspace{0.5em},\hspace{1em}\mathcal{E}_e\coloneqq- \frac{\epsilon}{2} \int_{R^2 \setminus \Omega} |E|^2 \, dS\]
+\indent For the minimal energy, a small variation $\delta\Omega$ leads to no change in energy, $\delta\mathcal{E}=0$.\\
+\indent The variation in the surface tension is:
+\[\delta (\gamma\mathcal{P})=\gamma\delta\mathcal{P}\hspace{0.5em},\hspace{1em}\delta\mathcal{P}=\int_{\partial \Omega}\kappa\df l\]
+\indent On the other hand, since all the charges are distributed on the boundary of the area $R^2 \setminus \Omega$, assume $\mathcal{E}_e|_{r\rightarrow\infty}\sim O(\frac{1}{r})\sim 0$ and $\mathcal{E}_e|_{\partial \Omega}=\frac{\lambda}{\epsilon}$,
+\[
+\mathcal{E}_e=-\frac{\epsilon}{2}\int_{\mathbb{R}^2\setminus \Omega}|E|^2\df S=-\frac{\epsilon}{2}\int_{\partial \Omega}|\frac{\lambda}{\epsilon}|^2\df l+ other \longrightarrow\delta \mathcal{E}_e \approx-\frac{\lambda^2}{2\epsilon}\int_{\partial \Omega}\df l
+\]
+Although the contribution of the boundary to $E_e$ is acounted for, the area may affect $E_e$, which is not rigorously excluded.\\
+\indent Try the divergence theorem, The variation in the electric field $\delta E_e$ is:
+\begin{equation*}
+    \delta \mathcal{E}_e=\delta\left(-\frac{\epsilon}{2}\int_{\mathbb{R}^2\setminus\Omega}|E|^2 \df S
+\right)=-\frac{\epsilon}{2}\int_{\mathbb{R}^2\setminus\Omega}\delta|E|^2 \df S=-\frac{\epsilon}{2}\int_{\mathbb{R}^2\setminus\Omega}2\mathbf{E}\cdot\delta\mathbf{E} \df S
+\end{equation*}
+\indent Let $\mathbf{G}\coloneqq\mathbf{E}\delta V$
+\begin{equation*}
+    \begin{split}
+    \delta \mathcal{E}_e&=-\epsilon\int_{\mathbb{R}^2\setminus\Omega}\mathbf{E}\cdot\delta(-\nabla V) \df S=\epsilon\int_{\mathbb{R}^2\setminus\Omega}\mathbf{E}\cdot(\nabla \delta V) \df S\\
+\text{use } \nabla\cdot(\mathbf{A}\phi)=\phi\nabla\cdot\mathbf{A}+\mathbf{A}\cdot\nabla\phi\\
+    &=\epsilon\int_{\mathbb{R}^2\setminus\Omega}\nabla\cdot(\mathbf{E}\, \delta V) -\delta V \eqnmarkbox[black]{node1}{\nabla\cdot\mathbf{E}}\df S\\
+    &=\epsilon\int_{\mathbb{R}^2\setminus\Omega}\nabla\cdot(\mathbf{E}\, \delta V) \df S \xlongequal[ ]{\text{div thm}}\oint_{...}\mathbf{G}\cdot\hat{\mathbf{n}}\df l=\int_{\partial \Omega}...+\eqnmarkbox[black]{node2}{\int_{r\rightarrow\infty}\mathbf{E}}\cdot\hat{\mathbf{n}}\, \delta V\df l\\
+    &=\epsilon\int_{\partial\Omega}\mathbf{E}\cdot\hat{\mathbf{n}}\, \delta V \df l\\
+\text{Since }\mathbf{E}|_{\partial \Omega}=\frac{\lambda}{\epsilon}\hat{\mathbf{n}}\\
+    \delta \mathcal{E}_e&=\lambda\int_{\partial \Omega}\delta V \df l
+    \end{split}
+\end{equation*}
+\annotate[yshift=1em]{above, right, label above}{node1}{$\nabla \cdot \mathbf{E}|_{\mathbb{R}^2\setminus \Omega}= 0$}
+\annotate[yshift=1em]{above, right, label above}{node2}{$=0,\mathbf{E}|_{r\rightarrow\infty}\rightarrow 0$}
+\indent In order to have the desired result, we would expect\footnote{Expect to refer to \cite{Griffiths_2017}, pp. 103, to figure out why $\delta V$ is this. As only the outside of the droplet has $\mathbf{E}/neq 0$, there is a $\frac{1}{2}$}
+\[\int_{\partial \Omega} \delta V \df l =-\frac{\lambda}{2\epsilon}\int_{\partial \Omega}\df l\longrightarrow\delta V = -\frac{\lambda}{2\epsilon}\]
+\indent dig more
+\[\delta V =  \frac{1}{2}(\mathbf{E_{above}}+\eqnmarkbox[black]{node1}{{\mathbf{E}_{below}}})\cdot \delta \mathbf{d}=\frac{\mathbf{E_{above}}}{2}\delta \mathbf{d}=\frac{\lambda}{2\epsilon}\hat{\mathbf{n}}\cdot \delta \mathbf{d}\]
+\annotate[yshift=1em]{above, right, label above}{node1}{$=0$}
+Assume $\mathbf{d}=\hat{\mathbf{n}}$. Still problematic though, sign and others, later.
+%\subsection{First Subsection Title}
+
+%a1c2
+%\section{First Section Title}
+
+%a1c3
+\section{potentials with boundary conditions}
+\[w=\log (z -b) + \log (z-\frac{a^2}{b})-\log(z)\Longrightarrow w =\log (z +\frac{a^2}{z}-b-\frac{a^2}{b})\]
+this function\footnote{Refering to Fluid Dynamic 1 exam paper year 2014 question 4.} is a combination of one source at $b$, another one at $\frac{a^2}{b}$, and a sink at $0$.
+
+on $z=a e^{\mathrm{i}  \theta}$
+\[ w=\log (2 a \cos{\theta}-b-\frac{a^2}{b})\]
+hence
+\[\Im[w]= 0 \text{ or } -\pi\]
+
+\pagebreak
+%\renewcommand\bibname{{References}}
+%\bibliography{References}
+%\bibliographystyle{plain}

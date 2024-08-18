@@ -1,0 +1,133 @@
+\usepackage{xeCJK}%汉字
+
+%\usepackage[dvipsnames，table]{xcolor}%多颜色,颜色库要放在最前边，否则可能影响载入。
+\usepackage[dvipsnames]{xcolor}%多颜色,颜色库要放在最前边，否则可能影响载入。
+
+%\usepackage[options]{package-name}
+%多个option不知道是不是用，隔开
+
+%\usepackage[table]{xcolor}% to color the table
+
+\usepackage{mdframed}%加灰色底框
+
+\usepackage{empheq}%给文本加框
+
+\usepackage[perpage]{footmisc}%footnote re-no. every page
+
+%\usepackage{lipsum}
+
+%\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm,amssymb}%美国数学协会,proof 命令在这里。不是第一个
+% 定义新的定理样式
+\newtheoremstyle{mytheoremstyle}% 请替换为你喜欢的样式名
+  {0.5em}% 上间距
+  {0.5em}% 下间距
+  {\itshape}% 定理内容的字体样式
+  {}% 缩进量
+  {\bfseries}% 定理标题的字体样式
+  {  }% 标题后的标点符号
+  {0.0em}% 标题与内容之间的距离
+  {}% 定理头部的额外规范
+\theoremstyle{mytheoremstyle}% 创建新的定理环境
+\newtheorem{theorem}{Theorem}
+
+\usepackage{float}%调整图片位置的包，才能用[H]
+\usepackage{adjustbox}%供画图用
+\definecolor{mycolor}{RGB}{82, 140, 164}%调好的蓝色，做边框
+%E.G.一个画图例子
+% begin{figure}[H] % [H] forces figure to be output where it is defined in code (it suppresses floating)
+% 		\adjustbox{frame=1pt,frame,margin=0.5,color=mycolor}{\includegraphics[width=\linewidth]{pics/The Nectar login page.png}} % Figure image
+% 		\caption{\small Regenerated boundary shape and surface charge density of the charged droplets as described by Crowdy (2015), with different value of capillarity effort coefficients applied.}
+% 	\end{figure}
+
+
+\usepackage{extarrows}%长等号，且上下可添加文字
+%https://www.latexstudio.net/archives/8004.html
+%$$ A\xlongequal[sub-script]{super-script}B $$
+
+
+%链接：https://www.zhihu.com/question/617310608/answer/3166157888
+%\usepackage{amssymb}%可以打\therefore 因为所以符号的命令
+
+\usepackage{mathrsfs}%花体字母
+
+\numberwithin{equation}{section}%和上一个，让公式按 section 编号
+
+\usepackage{bm}
+%\usepackage{natbib}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%annotate eqn packages
+\usepackage{tikz}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{arrows,shapes}
+\usetikzlibrary{tikzmark}
+\usetikzlibrary{calc}
+
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{cleveref}
+\usepackage{annotate-equations}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\usepackage{float}%禁止表格浮动，相应的命令是\FloatBarrier，但实际上似乎不管用，用[h!]解决的。
+
+
+%\usepackage[a4paper,scale=0.8]{geometry}%格式
+
+%\usepackage{color}
+
+
+%\usepackage{lipsum}
+
+\usepackage{ragged2e}%使用\justify 回到正常对齐
+
+\usepackage{tabularray}
+
+\usepackage{shadowtext}
+
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsfonts}
+\usepackage{epstopdf}
+%\usepackage{matlab}
+
+\sloppy%不知道干嘛用，matlab的文件带的
+\epstopdfsetup{outdir=./}
+\graphicspath{ {./a1q3_images/} }
+
+\usepackage{pdfpages}%嵌入pdf页面，用\includepdf[pages={1,2}]{1.pdf} %[pages={3},scale=0.5] 命令可用
+
+%公式字母划去，用\cancel{}
+\usepackage{cancel}
+%\usepackage[thicklines]{cancel}
+
+\usepackage{graphicx} % Required for inserting images
+
+
+%以下三个是griffiths用的表示电磁学上场点和源点差的矢量的符号，需要相应的两个pdf的支持。
+%\def\rcurs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{ScriptR}}$}}}
+%\def\brcurs{{\mbox{$\resizebox{.16in}{.08in}{\includegraphics{BoldR}}$}}}
+%\def\hrcurs{{\mbox{$\hat \brcurs$}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{lastpage}
+
+% Define Header
+%\lhead{Yuan Liu (313350417)}
+%\chead{Physics 335 QM formulas}
+%\rhead{\today}
+
+% Define Footer
+%\lfoot{}
+%\cfoot{Page \thepage \,of \pageref{LastPage}}
+%\rfoot{}
+
+%\fancyhead{} % 页眉清空
+\renewcommand{\headrulewidth}{0pt} % 去页眉线
+%Define width of horizontal line in the header
+%\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.2pt}

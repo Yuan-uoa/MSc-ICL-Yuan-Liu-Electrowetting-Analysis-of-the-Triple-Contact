@@ -1,0 +1,47 @@
+\chapter{Memorandum of Programming in the Research}
+\section{}
+\subsection{Implementation of Equipotential Lines for Right Angle Contact Using MATLAB}
+
+This section describes the MATLAB implementation for visualizing equipotential lines for right angle contact. The process involves defining concentric circles, applying a series of conformal mappings, and visualizing the results.
+
+\begin{enumerate}
+    \item \textbf{Initial Setup}: Concentric circles with radii ranging from 0.05 to 1 are defined, along with random points inside and outside these circles. 
+    
+    \item \textbf{First Mapping (Cayley Map)}: Applies the transformation:
+    \[
+    \zeta_1 = \frac{1 - \zeta}{1 + \zeta}
+    \]
+    Due to MATLAB's numerical limitations, the outermost circle's radius $r=1$ is adjusted to $(1 - 1 \times 10^{-15})$.
+
+    \item \textbf{Second Mapping}: Multiplies the result by the imaginary unit:
+    \[
+    \zeta_2 = i \zeta_1
+    \]
+
+    \item \textbf{Third Mapping}: Applies a square root transformation:
+    \[
+    \zeta_3 = \sqrt{\zeta_2}
+    \]
+
+    \item \textbf{Fourth Mapping (Semi-Circle Map)}: Uses an inverse Cayley transformation:
+    \[
+    \zeta_4 = i \frac{1 - \zeta_3}{1 + \zeta_3}
+    \]
+    After mapping, replace \(r=1\) upper half circle points with points along the y-axis from \(y=1\) to \(y=-1\), and lower half circle points with points from \(\theta = -\pi/2\) to \(\pi/2\).
+
+    \item \textbf{Fifth Mapping (Crowdy Map)}: Applies the transformation:
+    \[
+    \zeta = iA \frac{9\zeta_4 - a^2 \zeta_4^3}{1 - a^2 \zeta_4^2}
+    \]
+    with $a$ and $A$ from \cite{Crowdy2015}.
+\end{enumerate}
+
+\textbf{MATLAB Implementation}
+
+\begin{enumerate}
+    \item \textbf{Define Concentric Circles}: \texttt{define\_concentric\_circles} generates initial circles and points.
+    \item \textbf{Apply Mappings}: \texttt{apply\_conformal\_mapping} applies each map while retaining color information.
+    \item \textbf{Visualization}: \texttt{plot\_all\_circles} visualizes the mapped data through each step.
+    \item \textbf{Execution}: \texttt{main()} conducts the mappings and plots of each stages.    
+\end{enumerate}
+For the complete MATLAB code, please visit the GitHub repository: \url{https://github.com/Yuan-uoa/MSc_App_maths_Project/tree/main}.

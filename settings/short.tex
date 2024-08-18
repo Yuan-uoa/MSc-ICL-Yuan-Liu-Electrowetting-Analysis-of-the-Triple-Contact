@@ -1,0 +1,26 @@
+%\newcommand{\apx}{\, \~{} \,}
+\newcommand{\im}{\mathrm{i} \,}
+\newcommand{\df}{\,\mathrm{d}}%定义命令来表示微分符号
+
+\newtheorem{thm}{Theorem}[section]%
+%\newtheorem{eg}{E.g.}[section]%
+%\newtheorem{defn}{Definition}[section]%
+\newtheorem{defn}[thm]{Definition}% def 不工作，需定义新命令 defn
+\newtheorem{eg}[thm]{Example}%
+%替换的两条，使 eg thm def 统一编号，便于查找。
+\newtheorem{prop}[thm]{Propostion}%
+\newtheorem{prf}[thm]{Proof}%
+
+
+\def\Xint#1{\mathchoice
+   {\XXint\displaystyle\textstyle{#1}}%
+   {\XXint\textstyle\scriptstyle{#1}}%
+   {\XXint\scriptstyle\scriptscriptstyle{#1}}%
+   {\XXint\scriptscriptstyle\scriptscriptstyle{#1}}%
+   \!\int}
+\def\XXint#1#2#3{{\setbox0=\hbox{$#1{#2#3}{\int}$}
+     \vcenter{\hbox{$#2#3$}}\kern-.5\wd0}}
+\def\ddashint{\Xint=}
+\def\dashint{\Xint-}
+%\dashint gives a single-dashed integral sign, \ddashint a double-dashed one.
+%https://texfaq.org/FAQ-prinvalint
