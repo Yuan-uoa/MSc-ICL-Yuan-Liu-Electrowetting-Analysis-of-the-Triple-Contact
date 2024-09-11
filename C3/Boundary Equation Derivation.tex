@@ -1,0 +1,42 @@
+\section{Boundary Equation Derivation}
+\subsection{Proposing the Problem}
+The term ``Electrowetting" refers to distinct scenarios, such as the two cases in Figure \ref{fig:ew_2cases}. This chapter addresses a charged droplet on an electrically negligible substrate, surrounded by air.
+\begin{figure}[H]
+    \centering
+\adjustbox{frame=0.25pt,frame,margin=0.1pt,color=mycolor}{\includegraphics[width=0.405\linewidth]{Figs/sketch eletrode.jpg}}\hspace{.5em}
+    \adjustbox{frame=0.25pt,frame,margin=0.1pt,color=mycolor}{\includegraphics[width=0.445\linewidth]{Figs/setup, tension and force.png}} % Side by side images
+    
+    \caption{\small In the left figure, an electrode generates a voltage difference $V_+$ between the uncharged droplet and the conductor beneath an insulating layer. Meanwhile, the charged droplet with surface charge density $\sigma_b$ sits on an electrically negligible layer in the right figure. $\Omega\in\mathbb{R}^2$ represents the volume/area of the charged droplet. The balance between surface tension $\gamma\kappa$, pressure $P$, and the electric force $\vec{f}_e$—which is always a repulsive force—affects the droplet's shape $\partial \Omega$, while its volume $\Omega$ remains unchanged. The directions of $\gamma\kappa$ and $P$ depend on the specific conditions.
+}
+     \label{fig:ew_2cases}
+\end{figure}
+\noindent The conducting fluid droplet occupies $\Omega\in\mathbb{R}^2$ , the charge generates an electric field $\vec{E}$, together with the mechanical energy $\gamma\mathcal{P}$ from surface tension, the energy equation, which can date back to \citet{Rayleigh_1882}, is
+\begin{equation}\label{eqn:minE}
+    \mathcal{E} = \gamma \mathcal{P} - \frac{\epsilon_0 \epsilon_r}{2} \int_{R^2 \setminus \Omega} |E|^2 \, dS
+\end{equation}
+
+The electric energy $\mathcal{E}_e$ is the second term on the right of equation (\ref{eqn:minE}). The integral area ${\mathbb{R}^2 \setminus \Omega}$ implies that there is no electric field inside the droplet. $\epsilon_0 \epsilon_r$ is the permittivity, $\gamma$ is the surface tension, $\mathcal{P}$ is the length of the liquid-vapour interface, as defined in \citet{Crowdy2015}, equation (1).  The boundary equation on the liquid-vapour interface, from equation (\ref{eqn:minE}), is
+\vspace{-0.5em}\begin{equation}\label{eqn:FonB}
+\gamma \kappa - \frac{\sigma^2}{2 \epsilon_0 \epsilon_r} = -p\vspace{-0.5em}
+\end{equation}
+\subsection{Forces at the Stationary Boundary}
+\hspace{0em}\indent \citet{Crowdy2015} proposed Equation (\ref{eqn:FonB}) by the variation of energy. Here, we first derive the equation (\ref{eqn:FonB}) from the forces on the droplet curve $\partial \Omega$. At any point on the droplet curve, let $\hat{n}$ be the normal direction pointing outward of the curve. The pressure difference $p\hat{n}$ and the surface tension, $\gamma \kappa \df l\hat{n} $, will be balanced by the electric force\footnote{Refer to equation (2.50), \citet{Griffiths_2017}, page 103.}
+%\vspace{-0.5em}
+\[
+\vec{f}_e=\frac{\sigma}{2} (\vec{E}_{above}+\vec{E}_{below})%\vspace{-0.5em}
+\]
+The interior area of the conductor droplet is an equipotential area hence $\vec{E}_{below}\equiv0$, whereas  
+%\vspace{-0.5em}
+\[
+\vec{E}_{above}|_{\partial \Omega}=-\nabla V|_{\partial \Omega}=-\left.\frac{\partial V}{\partial n}\hat{n}\right|_{\partial\Omega}%\vspace{-0.5em}
+\]
+$\vec{E}$ is caused by the surface charge density $\sigma$. According to equation (\ref{eqn:ed.line}) and equation (\ref{eqn:f.line}), the electrostatic pressure along the curve, is
+%\vspace{-0.5em}
+\[p_e=\frac{\sigma}{2}\left|\vec{E}_{above}\right|=-\frac{\sigma}{2}\frac{\partial V}{\partial n}=+\frac{\sigma^2}{2\epsilon_0\epsilon_r}%\vspace{-0.5em}
+\]
+This found the same result as in \citet{Fontelos2008}, equation (4). The force along $\hat{n}$ is:%\vspace{-0.75em}
+\[0=\gamma\kappa\hat{n}+p\hat{n}+\frac{1}{2}\sigma \vec{E}%\vspace{-0.75em}
+\]
+In the stabilised circumstance, a charged conducting droplet has balanced electric force, pressure, and surface tension perpendicularly along its boundary line.
+\input{C3/boundary equation via divergence theorem}
+\input{C3/Variation of Minimal Energy Equation}

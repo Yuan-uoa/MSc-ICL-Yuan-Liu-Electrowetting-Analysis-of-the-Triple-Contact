@@ -1,50 +1,187 @@
 \chapter{derivations}
+\section{mapping}
+\subsection{Derivation of $W'(\zeta)$ and $\eta$}\label{cpt:dev_w_e}
+\hspace{0em}\indent Derivation of \( W'(\zeta) \)
+\[ W'(\zeta) = i\mu \frac{1}{\zeta} \]
 
-\section{from minimal energy equation to the variation}
-
-\indent These two derivations are not completed, they are recorded here briefly for further investigation.\\
-\indent Start with conducting fluid droplet $\Omega\in\mathbb{R}^2$ surrounds as usual
-\[\mathcal{E} = \gamma \mathcal{P} - \frac{\epsilon}{2} \int_{R^2 \setminus \Omega} |E|^2 \, dS\hspace{0.5em},\hspace{1em}\mathcal{E}_e\coloneqq- \frac{\epsilon}{2} \int_{R^2 \setminus \Omega} |E|^2 \, dS\]
-\indent For the minimal energy, a small variation $\delta\Omega$ leads to no change in energy, $\delta\mathcal{E}=0$.\\
-\indent The variation in the surface tension is:
-\[\delta (\gamma\mathcal{P})=\gamma\delta\mathcal{P}\hspace{0.5em},\hspace{1em}\delta\mathcal{P}=\int_{\partial \Omega}\kappa\df l\]
-\indent On the other hand, since all the charges are distributed on the boundary of the area $R^2 \setminus \Omega$, assume $\mathcal{E}_e|_{r\rightarrow\infty}\sim O(\frac{1}{r})\sim 0$ and $\mathcal{E}_e|_{\partial \Omega}=\frac{\lambda}{\epsilon}$,
-\[
-\mathcal{E}_e=-\frac{\epsilon}{2}\int_{\mathbb{R}^2\setminus \Omega}|E|^2\df S=-\frac{\epsilon}{2}\int_{\partial \Omega}|\frac{\lambda}{\epsilon}|^2\df l+ other \longrightarrow\delta \mathcal{E}_e \approx-\frac{\lambda^2}{2\epsilon}\int_{\partial \Omega}\df l
-\]
-Although the contribution of the boundary to $E_e$ is acounted for, the area may affect $E_e$, which is not rigorously excluded.\\
-\indent Try the divergence theorem, The variation in the electric field $\delta E_e$ is:
-\begin{equation*}
-    \delta \mathcal{E}_e=\delta\left(-\frac{\epsilon}{2}\int_{\mathbb{R}^2\setminus\Omega}|E|^2 \df S
-\right)=-\frac{\epsilon}{2}\int_{\mathbb{R}^2\setminus\Omega}\delta|E|^2 \df S=-\frac{\epsilon}{2}\int_{\mathbb{R}^2\setminus\Omega}2\mathbf{E}\cdot\delta\mathbf{E} \df S
-\end{equation*}
-\indent Let $\mathbf{G}\coloneqq\mathbf{E}\delta V$
+Derivation of \( Z'(\zeta) \) as follows:
 \begin{equation*}
     \begin{split}
-    \delta \mathcal{E}_e&=-\epsilon\int_{\mathbb{R}^2\setminus\Omega}\mathbf{E}\cdot\delta(-\nabla V) \df S=\epsilon\int_{\mathbb{R}^2\setminus\Omega}\mathbf{E}\cdot(\nabla \delta V) \df S\\
-\text{use } \nabla\cdot(\mathbf{A}\phi)=\phi\nabla\cdot\mathbf{A}+\mathbf{A}\cdot\nabla\phi\\
-    &=\epsilon\int_{\mathbb{R}^2\setminus\Omega}\nabla\cdot(\mathbf{E}\, \delta V) -\delta V \eqnmarkbox[black]{node1}{\nabla\cdot\mathbf{E}}\df S\\
-    &=\epsilon\int_{\mathbb{R}^2\setminus\Omega}\nabla\cdot(\mathbf{E}\, \delta V) \df S \xlongequal[ ]{\text{div thm}}\oint_{...}\mathbf{G}\cdot\hat{\mathbf{n}}\df l=\int_{\partial \Omega}...+\eqnmarkbox[black]{node2}{\int_{r\rightarrow\infty}\mathbf{E}}\cdot\hat{\mathbf{n}}\, \delta V\df l\\
-    &=\epsilon\int_{\partial\Omega}\mathbf{E}\cdot\hat{\mathbf{n}}\, \delta V \df l\\
-\text{Since }\mathbf{E}|_{\partial \Omega}=\frac{\lambda}{\epsilon}\hat{\mathbf{n}}\\
-    \delta \mathcal{E}_e&=\lambda\int_{\partial \Omega}\delta V \df l
+         Z'(\zeta) &= iA \left( -\frac{1}{\zeta^2} + \frac{8(\zeta^2 - a^2) - 16\zeta^2}{(\zeta^2 - a^2)^2} \right)\\
+         &= iA \left( -\frac{1}{\zeta^2} - \frac{8(\zeta^2 + a^2)}{(\zeta^2 - a^2)^2} \right)\\
+         &= iA \frac{- (\zeta^2 - a^2)^2 - 8\zeta^2 (\zeta^2 + a^2)}{\zeta^2 (\zeta^2 - a^2)^2}\\
+         &= iA \frac{-9\zeta^4 - 6a^2\zeta^2 - a^4}{\zeta^2 (\zeta^2 - a^2)^2}\\
+         &= \frac{-iA}{\zeta^2 }\frac{(3\zeta^2 + a^2)^2}{(\zeta^2 - a^2)^2}
     \end{split}
 \end{equation*}
-\annotate[yshift=1em]{above, right, label above}{node1}{$\nabla \cdot \mathbf{E}|_{\mathbb{R}^2\setminus \Omega}= 0$}
-\annotate[yshift=1em]{above, right, label above}{node2}{$=0,\mathbf{E}|_{r\rightarrow\infty}\rightarrow 0$}
-\indent In order to have the desired result, we would expect\footnote{Expect to refer to \cite{Griffiths_2017}, pp. 103, to figure out why $\delta V$ is this. As only the outside of the droplet has $\mathbf{E}/neq 0$, there is a $\frac{1}{2}$}
-\[\int_{\partial \Omega} \delta V \df l =-\frac{\lambda}{2\epsilon}\int_{\partial \Omega}\df l\longrightarrow\delta V = -\frac{\lambda}{2\epsilon}\]
-\indent dig more
-\[\delta V =  \frac{1}{2}(\mathbf{E_{above}}+\eqnmarkbox[black]{node1}{{\mathbf{E}_{below}}})\cdot \delta \mathbf{d}=\frac{\mathbf{E_{above}}}{2}\delta \mathbf{d}=\frac{\lambda}{2\epsilon}\hat{\mathbf{n}}\cdot \delta \mathbf{d}\]
-\annotate[yshift=1em]{above, right, label above}{node1}{$=0$}
-Assume $\mathbf{d}=\hat{\mathbf{n}}$. Still problematic though, sign and others, later.
-%\subsection{First Subsection Title}
 
-%a1c2
-%\section{First Section Title}
+use the relation:
+\[\frac{\df w}{\df z} = \frac{\df W}{\df \zeta}\frac{\df \zeta}{\df z}=\frac{W'(\zeta)}{Z'(\zeta)}  \]
 
-%a1c3
-\section{potentials with boundary conditions}
+Calculation of \(\eta\)
+\[ \eta=\left|\frac{dw}{dz}\right| = \left|\frac{W'(\zeta)}{Z'(\zeta)} \right|=\left|\frac{\mu}{\zeta}\frac{\zeta^2}{A}  \frac{(\zeta^2 - a^2)^2}{(3\zeta^2 + a^2)^2} \right|=\frac{\mu}{A}  \left|\frac{\zeta^2 - a^2}{3\zeta^2 + a^2} \right|^2\]
+as $\left|\zeta\right|=1$.
+
+
+
+\subsection{try to find the droplet V, fail}\label{cpt:boundary_map_fail}
+We expect to find a complex potential, the imaginary part of which is the potential equation of the charged droplet, parameterized by the radii of the concentric circles in the $z$-plane
+This mapping transforms points inside the unit circle into points outside the unit circle.
+The original conformal mapping is:
+\[
+\zeta = i A \left( \frac{1}{w} + \frac{8w}{w^2 - a^2} \right)
+\]
+inverse map:
+\[
+w = \frac{1}{z}
+\]
+then, the new composite mapping:
+\[
+\zeta = i A \left( \frac{1}{\left(\frac{1}{z}\right)} + \frac{8\left(\frac{1}{z}\right)}{\left(\frac{1}{z}\right)^2 - a^2} \right)
+\]
+Simplify the expression:
+\[
+\zeta = i A \left( z + \frac{8z}{1 - a^2z^2} \right)
+\]
+\[
+\zeta = i A \left( \frac{9z - a^2z^3}{1 - a^2z^2} \right)
+\]
+
+The new composite mapping formula is, in $z(\zeta)$:
+\[
+z = i A \left( \frac{9\zeta  - a^2\zeta ^3}{1 - a^2\zeta ^2} \right)
+\]
+
+With this formula, although the droplet boundary map to the unit circle in the \(\zeta\)-plane correctly, the points inside the semi-circle is not 1-1 mapped to the region out of the droplet curve. 
+
+\subsection{Mapping Points Inside the Unit Circle to the Semi-Circle}\label{cpt:maps_combine}
+Given two transformations:
+
+1. Mapping points inside the unit circle to the first quadrant:
+   \[
+   \zeta_1 = \sqrt{\left( \frac{1 - \zeta}{1 + \zeta} \right) \cdot i}
+   \]
+
+2. Mapping points from the first quadrant to the interior of the lower half-circle:
+   \[
+   \eta_1 = \frac{1 - \eta}{1 + \eta}
+   \]
+
+To find the relationship between \(\zeta\) and \(\eta\), set \(\zeta_1 = \eta_1\):
+\[
+\sqrt{\left( \frac{1 - \zeta}{1 + \zeta} \right) \cdot i} = \frac{1 - \eta}{1 + \eta}
+\]
+
+Multiply both sides by \((1 + \eta)\):
+\[
+\sqrt{\left( \frac{1 - \zeta}{1 + \zeta} \right) \cdot i} \cdot (1 + \eta) = 1 - \eta
+\]
+
+Rearrange to isolate \(\eta\):
+\[
+\sqrt{\left( \frac{1 - \zeta}{1 + \zeta} \right) \cdot i} + \sqrt{\left( \frac{1 - \zeta}{\zeta + 1} \right) \cdot i} \cdot \eta = 1 - \eta
+\]
+
+Combine \(\eta\) terms:
+\[
+\eta \left( \sqrt{\left( \frac{1 - \zeta}{1 + \zeta} \right) \cdot i} + 1 \right) = 1 - \sqrt{\left( \frac{1 - \zeta}{\zeta + 1} \right) \cdot i}
+\]
+
+The combination of mappings\footnote{Refer to \ref{cpt:zeta_in_eta} for the inverse form.}, sum up to \(\eta\), is:
+\[
+\eta = \frac{1 - \sqrt{\left( \frac{1 - \zeta}{\zeta + 1} \right) \cdot i}}{1 + \sqrt{\left( \frac{1 - \zeta}{\zeta + 1} \right) \cdot i}}
+\]
+
+\subsection{The Trigs and Hypers}\label{cpt:hyper}
+Given Mapping Formula
+\[
+\eta(\zeta) = \frac{1 - \sqrt{\frac{w}{2}} - i \sqrt{\frac{w}{2}}}{1 + \sqrt{\frac{w}{2}} + i \sqrt{\frac{w}{2}}}
+\]
+
+where:
+\[
+w = \frac{1 - \zeta}{\zeta + 1}
+\]
+
+Hyperbolic Function Properties
+The definition of the hyperbolic tangent function is:
+\[
+\tanh(z) = \frac{\sinh(z)}{\cosh(z)} = \frac{e^z - e^{-z}}{e^z + e^{-z}}=\frac{1-e^{-2z}}{1+e^{-2z}}
+\]
+
+Transforming the Formula
+Considering the complex logarithm:
+\[
+\log(w) = \log \left( \frac{1 - \zeta}{\zeta + 1} \right)
+\]
+
+Let:
+\[
+u = \sqrt{\frac{w}{2}}
+\]
+
+Then the mapping formula can be rewritten as:
+\[
+\eta(\zeta) = \frac{1 - u - iu}{1 + u + iu}\Longrightarrow-2z=\log {\frac{1+\im}{\sqrt{2}}\sqrt{w}}\Longrightarrow z =-\frac{1}{2}\log{\frac{1+\im}{\sqrt{2}}\sqrt{w}}
+\]
+
+Using the Hyperbolic Tangent Function Properties:
+\[\eta=
+\tanh \left( \frac{1}{2} \log \left( \frac{1+\im}{\sqrt{2}}\sqrt{\frac{1 - \zeta}{\zeta + 1} } \right) \right) = \frac{\sinh \left( \frac{1}{2} \log \left( \frac{1+\im}{\sqrt{2}}\sqrt{\frac{1 - \zeta}{\zeta + 1} } \right) \right) }{\cosh \left( \frac{1}{2} \log \left( \frac{1+\im}{\sqrt{2}}\sqrt{\frac{1 - \zeta}{\zeta + 1} } \right) \right) }
+\]
+
+\subsection{inverse map, $\zeta(\eta)$}\label{cpt:zeta_in_eta}
+Square both sides to eliminate the square root:
+
+\[
+\frac{1 - \zeta}{\zeta + 1} \cdot i = \left( \frac{1 - \eta}{1 + \eta} \right)^2
+\]
+Expanding and rearranging terms:
+
+\[
+\zeta (1 + \eta)^2 - (1 + \eta)^2 = -i \zeta (1 - \eta)^2 - i (1 - \eta)^2
+\]
+
+\[
+\zeta (1 + 2\eta + \eta^2) - (1 + 2\eta + \eta^2) = -i \zeta (1 - 2\eta + \eta^2) - i (1 - 2\eta + \eta^2)
+\]
+
+Combine like terms:
+
+\[
+\zeta (1 + 2\eta + \eta^2 + i (1 - 2\eta + \eta^2)) = (1 + 2\eta + \eta^2 - i (1 - 2\eta + \eta^2))
+\]
+
+Factor out \(\zeta\):
+
+\[
+\zeta (1 + 2\eta + \eta^2 + i (1 - 2\eta + \eta^2)) = (1 + 2\eta + \eta^2 - i (1 - 2\eta + \eta^2))
+\]
+
+Finally, solving for \(\zeta\):
+
+\[
+\zeta = \frac{(1 - i) + (2 + 2i)\eta + (1 + i)\eta^2}{(1 + i) + (2 - 2i)\eta + (1 + i)\eta^2}
+\]
+\section{electric studies}
+\input{C2/The Energy of an Electrostatic Configuration}
+\input{C2/uniqueness thm}
+\subsection{Uncharged Conductor Disc with Constant E Apply}
+Exist constant $E_0$, let
+\[
+    V_{far}=E_0 r \sin{\theta}
+\]
+with Laplace slon \[V = \sum (A_n r^n+B_n) \frac{1}{r^n}(\sin{n\theta}+\cos{n\theta})\]
+may find
+\[
+    V=k_0 (r-\frac{1}{r})\sin{\theta}
+\]
+and surface charge at r=1
+\[
+\sigma=-\epsilon_0\frac{\partial V}{\partial r}=-\epsilon_0 (1+\frac{1}{r^2})\sin{\theta}=-2k_0\epsilon_0\sin{\theta}
+\]
+
+\subsection{Potentials, vortex case}
 \[w=\log (z -b) + \log (z-\frac{a^2}{b})-\log(z)\Longrightarrow w =\log (z +\frac{a^2}{z}-b-\frac{a^2}{b})\]
 this function\footnote{Refering to Fluid Dynamic 1 exam paper year 2014 question 4.} is a combination of one source at $b$, another one at $\frac{a^2}{b}$, and a sink at $0$.
 
@@ -53,7 +190,6 @@ on $z=a e^{\mathrm{i}  \theta}$
 hence
 \[\Im[w]= 0 \text{ or } -\pi\]
 
-\pagebreak
 %\renewcommand\bibname{{References}}
 %\bibliography{References}
 %\bibliographystyle{plain}

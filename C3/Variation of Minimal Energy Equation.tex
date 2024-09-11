@@ -1,0 +1,41 @@
+\subsection{Variation of Minimal Energy Equation}
+\label{Min_Eng}
+\hspace{0em}\indent We lastly attempt the variation method. For energy minimization, a variation of the droplet curve $\delta\Omega$ leads to no change in energy, $\delta\mathcal{E}=0$. The corresponding variation in the surface tension and mechanical energy is:
+\vspace{-0.5em}
+\[\delta (\gamma\mathcal{P})=\gamma\delta\mathcal{P}\hspace{0.5em},\hspace{1em}\delta\mathcal{P}=\int_{\partial \delta\Omega}\kappa\df l\vspace{-0.5em}\]
+
+Furthermore, since all the charges are distributed on the boundary $\partial \Omega$, assume\footnote{for a point charge, $E\sim r^{-2}\Longrightarrow\int E \sim O(r^{-1})$.} $\mathcal{E}_e|_{r\rightarrow\infty}\leq O(r^{-1})\sim 0$. Known $\mathcal{E}_e|_{\partial \Omega}=\sigma/\epsilon$ from equation (\ref{eqn:ed.line}), where $\sigma$ is the line charge density,
+\[
+\mathcal{E}_e=-\frac{\epsilon}{2}\int_{\mathbb{R}^2\setminus \Omega}|E|^2\df S=-\frac{\epsilon}{2}\int_{\partial \Omega}|\frac{\sigma}{\epsilon}|^2\df l+ \text{others} \Longrightarrow\delta \mathcal{E}_e \approx-\frac{\sigma^2}{2\epsilon}\int_{\partial \delta\Omega}\df l+\delta\, \text{others}
+\]
+Presume that a small variation of the boundary curve has a negligible effect in the region other than $\partial \Omega$, hence $\delta\, \text{others}\equiv0$, which is hinted in equation (\ref{eqn:div_find_0}). Sum up the two parts gives
+\vspace{-0.5em}\[
+\gamma \int_{\partial \Omega} \kappa \df l - \frac{\sigma^2}{2\epsilon}\int_{\partial \Omega}=0\vspace{-0.5em}
+\]
+Together with equation (\ref{Delta_P}), $\Delta p = \gamma \kappa$, the surface tension and pressure balance each other in the absence of electric force, we achieve the wanted formula.
+\subsection{Boundary Charge Density and Non-dimensionalization}
+\hspace{0em}\indent We reformulate equation (\ref{eqn:FonB}) in terms of the complex potential and apply non-dimensionalization to the formula for subsequent analysis. Define the complex potential of the electric potential V be
+$w=U+\im V$ , where $U=\overline{V}$. For the harmonic function $\df_z w=\partial_x U+\im \partial_x V$. Known $\partial_x  U = \partial_y V$, hence on $\partial\Omega$, where $\Vec{E}=E\hat{n}=\nabla\cdot V=\partial V/\partial \hat{n}$, therefore:
+\vspace{-0.5em}
+\begin{equation}\label{eqn:wz_sigma}
+\left|\frac{\df w}{\df z}\right|^2=\left|\partial_x V+\im\partial_y V\right|^2=\left|\nabla\cdot V\cdot\hat{n}\right|^2=|E|^2=\frac{\sigma^2}{\epsilon^2}\vspace{-0.5em}    
+\end{equation}
+
+Thus, rewrite equation (\ref{eqn:FonB}) as a function of $w$
+\vspace{-0.5em}
+\begin{equation}\label{eqn:boundary_w}
+\gamma \kappa - \frac{\epsilon}{2}\left|\frac{\df w}{\df z}\right|^2 = -p\vspace{-0.5em}  
+\end{equation}
+
+Apply non-dimensionalization:\vspace{-1.em}
+% \\ $z\coloneqq L\widetilde{z}$, 
+% $ \kappa \coloneqq \widetilde{\kappa} / L$, 
+% $w\coloneqq\widetilde{w}\sqrt{\gamma L/\epsilon}$, 
+% $p\coloneqq\Gamma\gamma/L$, 
+\[z\coloneqq L\widetilde{z}\hspace{2em}\kappa \coloneqq \widetilde{\kappa} / L\hspace{2em}w\coloneqq\widetilde{w}\sqrt{\gamma L/\epsilon}\hspace{2em}p\coloneqq\Gamma\gamma/L\]
+
+$L$, $\Gamma$ are constants. Thus, equation (\ref{eqn:boundary_w}) becomes\footnote{Our derivation found a factor of $\frac{1}{2}$ difference from \citet{Crowdy2015}, which arises due to the setting of the constants and, therefore, does not have any real physics influence.}
+%\vspace{-1.em}
+\begin{equation}\label{eqn:dim.bl}
+\widetilde{\kappa}-\frac{1}{2}\left|\frac{\df \widetilde{w}}{\df \widetilde{z}}\right|^2=-\Gamma
+\end{equation}

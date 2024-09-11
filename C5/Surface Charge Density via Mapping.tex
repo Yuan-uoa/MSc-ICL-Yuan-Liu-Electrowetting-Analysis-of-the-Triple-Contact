@@ -1,0 +1,25 @@
+\section{Surface Charge Density via Mapping}
+The surface charge density on the $z$-plane is related to the conformal mapping
+\[
+z=\frac{\zeta}{2}+\frac{1}{2\zeta}
+\]
+where
+\[\frac{\df\zeta}{\df z} = \left( \frac{\df z}{\df\zeta} \right)^{-1}\Longrightarrow\frac{\df z}{\df\zeta} = \frac{1}{2} \left( 1 - \frac{1}{\zeta^2} \right)
+\]
+the droplet curve on the $\zeta$-plane lies on $\zeta=e^{\im\theta}$, thus 
+\[
+\left. 1 - \frac{1}{\zeta^2} \right|_{\zeta=e^{\im \theta}} =  \frac{\zeta^2 - 1}{\zeta^2}  =  \frac{e^{i2\theta} - 1}{e^{i2\theta}}  
+\]
+the derivation finds
+\begin{align*}
+\left| \frac{\df z}{\df\zeta} \right| &= \frac{1}{2} \left| e^{i2\theta} - 1 \right| = \frac{1}{2} \sqrt{(\cos 2\theta - 1)^2 + \sin^2 2\theta} \\
+&= \frac{1}{2} \sqrt{\cos^2 2\theta + \sin^2 2\theta + 1 - 2\cos 2\theta} \\
+&= \frac{1}{2} \sqrt{2 - 2\cos 2\theta} = \frac{\sqrt{2}}{2} \sqrt{1 - \cos 2\theta} \\
+&= \frac{\sqrt{2}}{2} \sqrt{2\sin^2 \theta} = \sin \theta\\
+\Longrightarrow & \left| \frac{\df \zeta}{\df z} \right| = \frac{1}{\sin \theta}
+\end{align*}
+hence 
+\[
+\sigma(z) = \left| \frac{dw}{dz} \right| = \left| \frac{dw}{\df\zeta} \frac{1}{\sin \theta} \right| 
+\]
+We observe that the surface charge density on the $z$-plane, $\sigma$, is a multiple of that on the $\zeta$-plane and the derivative of the mapping function. More importantly, at $\theta=0$ and $\theta=\pi$, $\sigma$ is undefined. Since the boundary equation is a function of $\sigma$, This implies that the approach is invalid at the ends of the droplet. Consequently, the contact angle cannot be derived via the mapping we employ. 

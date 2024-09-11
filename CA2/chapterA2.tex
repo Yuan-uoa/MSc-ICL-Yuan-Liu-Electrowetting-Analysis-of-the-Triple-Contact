@@ -1,5 +1,4 @@
 \chapter{Mathematical Considerations to Note}
-
 \section{Complx}
 \subsection{Basis}
 
@@ -18,8 +17,7 @@ z = x + iy, \quad \overline{z} = x - iy \Longrightarrow &x = \frac{z + \overline
 
 \begin{prop}{conjugate of derivative}
 \end{prop}
-\[\overline{\left(\frac{\df f}{\df z}\right)}=\frac{\df \overline{f}}{\df z}\]
-\[\overline{\left(\frac{\df f}{\df z}\right)}\neq\frac{\df \overline{f}}{\df \overline{z}}\]
+\[\overline{\left(\frac{\df f}{\df z}\right)}=\frac{\df \overline{f}}{\df z}\neq\frac{\df \overline{f}}{\df \overline{z}}\]
 
 \section{Del Operators in Complex Form}
 \subsection{Derivatives}
@@ -109,26 +107,6 @@ The logarithmic term fits within the general solution framework:
 f(z) = \sum_{n=1}^{\infty} a_n z^n + b_n z^{-n} + c_0 \log(z)
 \]
 
-\subsection{Cauchy Riemann Condition}
-
-\begin{thm}{Cauchy Riemann Condition (f CRC= f hoarmonic)}
-\end{thm}
-
-\begin{center}
-$f(z)=\phi+\im\psi$ analytic at $z_0\Longleftrightarrow$ CRC and $\psi,\phi\in \mathbb{R}$, $\psi,\phi\in C^1$\footnote{$C^1 \coloneqq$1st derivate cts.}
-\end{center}
-CRC:
-\begin{align*}
-    \partial_x \phi &=\partial_y \psi    \\
-    \partial_x \psi &= -\partial_y \phi
-\end{align*}
-
-\begin{prop}{$\frac{\df f}{\df z}$ when CRC}
-\end{prop}
-\begin{equation*}
-f CRC \Longrightarrow f_z=\partial_x \phi+ \im \partial_x \psi= \partial_y \psi\textcolor{red}{-}\im\partial_y \phi
-\end{equation*}
-on $\forall \mathbb{C}$, NOT only along $\hat{\mathbf{x}}$ or $\hat{\mathbf{y}}$ direction.
 
 
 \subsection{Curvature in Complex form}

@@ -1,4 +1,4 @@
-\usepackage{natbib}
+\usepackage[numbers]{natbib}
 %\bibliographystyle{plain}
 %\citestyle{authoryear}
 %在 LaTeX 中，如果你想要使用哈佛风格（Harvard style）的文中引用，并且不希望出现数字编号，你可以使用 natbib 宏包结合 authoryear 样式。这个组合可以让你在文中引用作者和年份，并且不出现数字编号。
@@ -51,3 +51,11 @@
 \usepackage{mathrsfs}%花体字母
 
 \numberwithin{equation}{section}%和上一个，让公式按 section 编号
+
+\usepackage{titlesec}
+% 自定义 chapter 标题格式，设置顶部间距为 0，底部间距为 20pt
+\titleformat{\chapter}[hang]{\huge\bfseries}{\thechapter}{1em}{}
+\titlespacing*{\chapter}{0pt}{-10pt}{20pt}  % 调整章节标题的上方和下方间距
+
+\usepackage{amsmath,amsthm,amssymb}%美国数学协会,proof 命令在这里。不是第一个
+% 定义新的定理样式

@@ -1,0 +1,32 @@
+\subsection{Derivation Using the Divergence Theorem}
+\hspace{0em}\indent We next try the divergence theorem. The variation in the electric field $\delta E_e$ is:
+\begin{equation*}
+    \delta \mathcal{E}_e=+\delta\left(-\frac{\epsilon}{2}\int_{\mathbb{R}^2\setminus\Omega}|E|^2 \df S
+\right)=\int_{\delta\partial\Omega}...-\frac{\epsilon}{2}\int_{\mathbb{R}^2\setminus\Omega}\delta|E|^2 \df S\simeq-\frac{\epsilon}{2}\int_{\mathbb{R}^2\setminus\Omega}2\vec{E}\cdot\delta\vec{E} \df S
+\end{equation*}
+Let $\vec{G}\coloneqq\vec{E}\delta V$, $V$ is the voltage.
+\begin{equation*}
+    \begin{split}
+    \delta \mathcal{E}_e&=-\epsilon\int_{\mathbb{R}^2\setminus\Omega}\vec{E}\cdot\delta(-\nabla V) \df S=\epsilon\int_{\mathbb{R}^2\setminus\Omega}\vec{E}\cdot(\nabla \delta V) \df S
+    \end{split}
+    \end{equation*}
+Use $\nabla\cdot(\vec{A}\phi)=\phi\nabla\cdot\vec{A}+\vec{A}\cdot\nabla\phi$
+\begin{equation}\label{eqn:div_find_0}
+    \begin{split}
+    \delta \mathcal{E}_e&=\epsilon\int_{\mathbb{R}^2\setminus\Omega}\nabla\cdot(\vec{E}\, \delta V) -\delta V \eqnmarkbox[black]{node1}{\nabla\cdot\vec{E}}\df S\\
+    &=\epsilon\int_{\mathbb{R}^2\setminus\Omega}\nabla\cdot(\vec{E}\, \delta V) \df S \xlongequal[ ]{\text{div thm}}\oint_{...}\vec{G}\cdot\hat{n}\df l \epsilon=\int_{\partial \Omega}...+\eqnmarkbox[black]{node2}{\int_{r\rightarrow\infty}\vec{E}}\cdot\hat{n}\, \delta V\df l\\
+    &=\epsilon\int_{\partial\Omega}\vec{E}\cdot\hat{n}\, \delta V \df l=\sigma\int_{\partial \Omega}\delta V \df l\\
+    \end{split}
+\end{equation}
+\annotate[yshift=1em]{above, right, label above}{node1}{$\nabla \cdot \vec{E}|_{\mathbb{R}^2\setminus \Omega}= 0$}
+\annotate[yshift=1em]{above, right, label above}{node2}{$=0,\vec{E}|_{r\rightarrow\infty}\rightarrow 0$}
+
+\vspace{-1em}
+\noindent Equation (\ref{eqn:ed.line}) shows $\vec{E}|_{\partial \Omega}=\sigma/\epsilon\hat{n}$. To have the desired result, we expect
+\[\int_{\partial \Omega} \delta V \df l =-\frac{\sigma}{2\epsilon}\int_{\delta \partial \Omega}\df l\Longrightarrow\delta V = -\frac{\sigma}{2\epsilon}\delta l\]
+Moreover\footnote{Refer to \cite{Griffiths_2017}, equation (2.50).}, \vspace{0.5em}
+\[\delta V =  -\frac{1}{2}(\vec{E}_{above}+\eqnmarkbox[black]{node1}{{\vec{E}_{below}}})\cdot \delta \vec{l}=-\frac{\vec{E}_{above}}{2}\delta \vec{l}=-\frac{\sigma}{2\epsilon}\hat{n}\cdot \delta \vec{l}\]
+\annotate[yshift=1.0em]{above, right, label above}{node1}{$=0$}
+
+\vspace{-1.5em}
+\noindent Since $V=\int \vec{E}\Longrightarrow \delta V \sim \vec{E}_{average}\cdot\delta\vec{d}$. Let $\delta l=\hat{n}\cdot\delta\vec{l}$, We derive the wanted equation,

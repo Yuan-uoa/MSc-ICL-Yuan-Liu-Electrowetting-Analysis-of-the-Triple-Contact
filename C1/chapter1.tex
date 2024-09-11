@@ -1,70 +1,23 @@
 \chapter{Introduction}
-Studying the electric potential field and shape of electrowetting droplets through mathematical approaches can build upon current research findings and enrich discussions in this field.
-\iffalse
+\setcounter{page}{1}%set page # be 1, start from here
 
-%\section{Overview}
-Figures, ~\ref{fig:TPBs}
 
-\begin{figure}[H] %The "H" tells latex to put the figure after the previous line and before the next line no matter what.
-  \centering
-%  \includegraphics[trim = 0 5mm 0 5mm, clip,width=0.9\textwidth]{C1/Figs/TPBs1}
-  \caption{F1.}
-  \label{fig:TPBs} 
-\end{figure}
 
-Tables ~\ref{tab:FuelCellTypes}.
+\section{Background}
+\hspace{0em}\indent The wettability or hydrophobicity/hydrophilicity is an inherent property of a material. A well-known example from nature is the remarkable water-repellent phenomenon of the lotus leaf. The contact angle between the liquid-vapour and solid-liquid interfaces known as \citeauthor{young_1805}’s angle, measures the wettability of solid surfaces. 
 
-\begin{table}[H]
-\centering
-\caption{table}
-\label{tab:FuelCellTypes}
-\iffalse
-\begin{tabular}{@{}lllll@{}}
-\hline
-\begin{tabular}[c]{@{}l@{}}Operating\\   Temperature (\celsius)\end{tabular} & Mobile Ion  & Electrolyte                                                           & Name                                                                 & Initialism \\ \hline
-50-150                                                                       & OH$^-$      & \begin{tabular}[c]{@{}l@{}}Aqueous\\   alkaline solution\end{tabular} & Alkaline                                                             & AFC        \\
-50-200                                                                       & H$^+$       & Ionomer                                                               & \begin{tabular}[c]{@{}l@{}}Proton\\   Exchange Membrane\end{tabular} & PEM        \\
-150-250                                                                      & H$^+$       & \begin{tabular}[c]{@{}l@{}}Molten phosphoric\\   acid\end{tabular}    & \begin{tabular}[c]{@{}l@{}}Phosphoric\\   Acid\end{tabular}          & PAFC       \\
-600-700                                                                      & CO$_3$$^{2-}$ & \begin{tabular}[c]{@{}l@{}}Molten\\   alkaline carbonate\end{tabular} & \begin{tabular}[c]{@{}l@{}}Molten\\   Carbonate\end{tabular}         & MCFC       \\
-500-1000                                                                     & O$^{2-}$    & \begin{tabular}[c]{@{}l@{}}Ceramic\\   Oxide\end{tabular}             & \begin{tabular}[c]{@{}l@{}}Solid\\   Oxide\end{tabular}              & SOFC       \\ \hline
-\end{tabular}
-\fi
-\end{table}
+Altering the hydrophilicity via an external voltage is known as electrowetting, a process in which the wettability of a solid with respect to a liquid is enhanced by generating a voltage difference between the liquid and the solid substrate\cite{quin_05}. In his pioneering work on electrowetting, Lord \citeauthor{Rayleigh_1882} found that adding charge to a droplet beyond a critical value can cause it to split. The study of electrical droplets was once a laboratory curiosity and scientific novelty, with examples such as measuring the size of water droplets in thunderstorms and facilitating the formation of preferred conduction pathways in meteorology\cite{WSON_1921}. This phenomenon has gained renewed attention because of its relevance in microfluidics applications, including everyday uses like hydrophobic coatings\cite{Sushanta_18}, liquid shutters\cite{Lee_21}, and engineering devices such as droplet-based energy generators\cite{Wu_20} and electrowetting displays\cite{Yong_17}.
 
-\iffalse
-Creating the nomenclature requires calling:
+The specific manifestation of the change in a droplet's wettability is due to the electric stress applied by the external electric field, which alters both the contact angle and the curvature of the droplet's surface\cite{Taylor_64}. Still, ongoing studies offer new insights. \citeauthor{MugeleF2007} presents evidence that, on a small scale, the contact angle remains fixed even when subjected to a varying voltage. Electrical droplets' boundary curves/surfaces have been researched through experimental and numerical studies, physical approaches, and theoretical analyses. For instance \citeauthor{BerozJ_19} demonstrated experimentally and theoretically, a power law governing the stability limit of a conducting droplet or bubble exposed to an external electric field. \citeauthor{Fontelos2008_2} theoretically derived the static deformation of droplets into toroidal shapes.
 
-\begin{singlespacing}
-\begin{lstlisting}[backgroundcolor = \color{lightgray},
-                   language = sh,
-                   xleftmargin = 2cm,
-                   xrightmargin = 2cm,
-                   framexleftmargin = 1em]
-makeindex %.nlo -s nomencl.ist -o %.nls | txs:///pdflatex | txs:///pdflatex
-\end{lstlisting}
-\end{singlespacing}
+\section{Motivation}
+\hspace{0em}\indent \citet{crowdy2015} proposed a conformal mapping for the $90^\circ$ contact angle droplet, which was established in \citet{Crowdy1999} and \citet{Crowdy2000} on bubble shape deformations. \citeauthor{Crowdy2015} discuss that electrowetting has an identical boundary function as bubble deformations, implying that these two distinct physical phenomena exhibit mathematical congruence.
 
-Creating the chapter reference sections requires calling:
 
-\begin{singlespacing}
-\begin{lstlisting}[backgroundcolor = \color{lightgray},
-                   language = MatLab,
-                   xleftmargin = 2cm,
-                   xrightmargin = 2cm,
-                   framexleftmargin = 1em]
-txs:///pdflatex | bibtex C1/chapter1.aux | bibtex C2/chapter2.aux| bibtex C3/chapter3.aux| bibtex C4/chapter4.aux| bibtex C5/chapter5.aux | bibtex C6/chapter6.aux | bibtex CA1/chapterA1.aux | txs:///pdflatex | txs:///pdflatex
-\end{lstlisting}
-\end{singlespacing}
+This insight inspires us to use conformal mapping methods to study electrowetting droplets under various conditions. My supervisor and I aim to investigate electrowetting at specific angles and apply boundary conditions to establish the complex potential, with interesting attempts and explorations involving the conformal mapping technique. Analyzing charged droplets through mathematical methods such as conformal mapping can leverage and enrich current research on the phenomenon of electrowetting, potentially introduce insights into the fluid dynamics surrounding charged droplets and support the analysis of electrowetting phenomena under broader conditions.
 
-For everything else, head to the \href{https://en.wikibooks.org/wiki/LaTeX}{\LaTeX Wikibook}.
+\section{Thesis Outline}
+Our thesis is structured as follows. Chapter 2 presents and derives the fundamental setup and formulas. Chapter 3, Mapping of 90° Contact Angle Droplets, verifies the boundary equation of a charged droplet and extends the Crowdy map to a new complex potential. Chapter 4, Potentials of 0° Contact Angle Droplets, develops electric potentials and establishes the non-obvious complex potential of the conducting thin film. Chapter 5, Droplet Shapes in Two Scenarios, examines the validity of the complex potential and shows that the derived droplet curves exhibit properties similar to experimental results. Chapter 6 concludes the thesis and discusses future work.
 
-The \texttt{lipsum} command generates space filling text so that you can more easily see the layout before you've added the content.
-\fi
-%\subsection{First Subsection Title}
-
-%c1.1 cts
-
-%\section{First Section Title}
-
-%C1 Contents
+Appendix A contains some of our derivations as a memo and support. Appendix B covers notes on relevant mathematical concepts. Appendix C provides a link to the project's GitHub repository, which includes the LaTeX code and programming from this study, for those who may be interested.
 

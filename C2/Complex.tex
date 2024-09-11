@@ -1,0 +1,32 @@
+\section{Complex Analysis}
+
+\subsection{Conformal Mapping}
+
+The Joukowski transformation is
+\[\zeta=z\pm\sqrt{z^2-a^2}\]
+and
+\[
+z=\frac{1}{2}\left(\zeta+\frac{a}{\zeta^2}\right)
+\]
+which maps arcs on the $z$-plane to circles on the $\zeta$-plane.
+\subsection{Cauchy Riemann Condition (CRC)}
+
+\begin{thm}{Cauchy Riemann Condition (CRC)}
+\end{thm}
+(f CRC = f is harmonic.)
+\begin{center}
+$f(z)=\phi+\im\psi$ analytic at $z_0\Longleftrightarrow$ f CRC and $\psi,\phi\in \mathbb{R}$, $\psi,\phi\in C^1$\footnote{$C^1 \coloneqq$1st derivate cts.}
+\end{center}
+CRC:
+\begin{align*}
+    \partial_x \phi &=\partial_y \psi    \\
+    \partial_x \psi &= -\partial_y \phi
+\end{align*}
+\begin{proof}
+    Omit.
+\end{proof}
+\begin{prop}{$\frac{\df f}{\df z}$ when CRC}
+\end{prop}\vspace{-4em}
+\begin{equation*}
+\text{$f$ CRC }\Longrightarrow f_z=\partial_x \phi+ \im \partial_x \psi= \partial_y \psi\textcolor{red}{-}\im\partial_y \phi\hspace{1em}\text{on $\forall \mathbb{C}$, NOT only along $\hat{x}$ or $\hat{y}$ direction.}
+\end{equation*}

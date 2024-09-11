@@ -1,0 +1,19 @@
+\subsection{Proof: Uniqueness of Electric Potential}\label{cpt:uniqueness}
+\begin{proof}
+Let $V^{(1)}$ and $V^{(2)}$
+be two random electric potential fields of the scenario. Define
+\[V\coloneqq V^{(1)} - V^{(2)}\]
+\[\vec{E}\coloneqq\vec{E}^{(1)} - \vec{E}^{(2)}\]
+Assume that at the boundary $s\equiv z\to\infty$
+\[V^{(1)}\big|_{s} =V^{(2)}\big|_{s}\Longrightarrow V(z\to\infty) =V\big|_{s}= 0\]
+apply the divergence theorem, at $z\to\infty$:
+\[\int_\mathcal{V} \nabla \cdot (V \vec{E}) \, \df\tau= \int_S V \vec{E} \cdot \hat{n} \, \df a = 0\]
+take the divergence of $V\vec{E}$:
+\[\nabla \cdot (V \vec{E}) = \nabla V \cdot \vec{E}+ V \cdot (\nabla\cdot\vec{E}) = - \vec{E}\cdot \vec{E}\]
+from the two we find
+\[\int_{\mathcal{V}} - \vec{E}^2 \, dV = 0\]
+therefore $\vec{E}\cdot\vec{E}\equiv 0\text{ }\forall z$, equivalently $E_x^2+E_y^2\equiv 0\hspace{0.5em}\forall\, z$, hence $E_x\equiv 0,\,E_y\equiv 0\hspace{0.5em}\forall\, z$, implies
+\[\vec{E^{(1)}}=\vec{E^{(2)}}\hspace{0.5em}\forall\, z\]
+Finding this, together with the two voltages being equal at the boundary $z\to\infty$, shows that the values of the two electric potentials are identical. That is
+\[V^{(1)} \big|_{s} = V^{(2)}\big|_{s}\Longrightarrow V^{(1)} = V^{(2)} \hspace{0.5em} \forall\, z\]
+\end{proof}

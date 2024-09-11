@@ -1,0 +1,42 @@
+\subsection{The Energy of an Electrostatic Configuration}\label{cpt:energy}
+The work required to assemble a distribution of point charges is defined as the energy of the system. Start with a charge Q at the origin, and move a particle of charge $q_1$, from infinity to $\vec{r}_1$. The minimum work of this action is
+\begin{equation*}
+    W_1 = \int_{\infty}^{r_1}\vec{F}_{Q\,q_1}\cdot\df\vec{l}=-q_1 \int_{\infty}^{r_1}\vec{E}_Q\cdot\df\vec{l}=q_1 V_Q(\vec{r}_1)
+\end{equation*}
+Next, move a particle of charge $q_2$ from infinity to a distance $\vec{r}_2$ from $Q$, and a distance $\vec{r}_{12}=\vec{r}_2-\vec{r}_1$ from $q_1$. The work done for this action is
+\begin{equation*}
+    W_2 = \int_{\infty}^{\vec{r}_2}\vec{F}_{Q\,q_2}\cdot\df\vec{l}+\int_{\infty}^{r_{12}}\vec{F}_{q_1\,q_2}\cdot\df\vec{l}=q_2\Big{[}V_Q(\vec{r}_2)+V_{q_1}(\vec{r}_{12})\Big{]}
+\end{equation*}
+Consequently, the total work is equal to \textbf{half} of the double sum of the products of all interior electric potentials and charges.
+\begin{equation*}
+    W =\frac{1}{2} \sum_{i=Q,1,2}q_i\sum_{j\neq i} V_j(\vec{r}_i)=\frac{1}{2} \sum_{i=Q,1,2}q_i V(\vec{r}_{i})\hspace{0.5em},\hspace{1em}V(r_i)\coloneqq\sum_{j\neq i} V_j(\vec{r}_{ij})
+\end{equation*}
+In the case of a continuous charge distribution, the energy of the static charge system in free space is 
+\begin{equation*}
+    W\footnote{this is equation (2.43) of \cite{Griffiths_2017}, page 94.}=\frac{1}{2}\int_{\mathcal{V}}\rho\, \int \vec{E} \cdot \df \vec{l} \,\df \tau=\frac{1}{2}\int_{\mathcal{V}}\rho\,V \,\df \tau
+\end{equation*}
+rewriting using equation (\ref{E.rho}), and applying the divergence theorem
+\begin{equation*}
+\begin{aligned}
+    W&=\frac{1}{2}\int_{\mathcal{V}}\epsilon_0(\nabla\cdot \vec{E})\, V\df \tau\\
+    \frac{\epsilon_0}{2}\times&=\int_{\mathcal{V}}\nabla\cdot(\vec{E} V)\df \tau-\int_{\mathcal{V}}\vec{E}\cdot
+       \eqnmarkbox[black]{node1}{(\nabla V)} \df\tau\\
+    &\sim \left.\underbrace{\oint_{S}\vec{E}V\df \vec{a}}_{\sim r^{-1}\sim0}+\int_\mathcal{V}E^2\df\tau\right|_{\vec{r}\rightarrow\infty}^{\text{let integral over all space}}
+\end{aligned}
+\end{equation*}
+\annotate[yshift=1em]{above, right, label above}{node1}{$\nabla V= -\vec{E}$}
+All of the above leads to the energy of/(work to assemble) an electrostatic configuration:
+\begin{equation}
+    W=\frac{\epsilon_0}{2}\int E^2 \df \tau\hspace{0.5em},\hspace{1em}\text{(all space)}
+\end{equation}
+\iffalse
+A capacitor is two conductors separated by a dielectric or free space. Define \textbf{capacitance} $C\coloneqq \frac{Q}{V}$.
+For the free space case, the energy (of a capacitor) is:
+\[
+W=\frac{1}{2}CV^2
+\]
+for dielectric,
+\[
+W=\frac{1}{2}\epsilon_r C V^2=\frac{\epsilon_r\,\epsilon_0}{2}\int E^2 \df \tau\hspace{0.5em},\hspace{1em}\text{(all space)}  
+\]
+\fi
